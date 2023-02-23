@@ -15,9 +15,9 @@ namespace Mission08_4_6.Controllers
         private TaskFormContext tfContext { get; set; }
 
         //Constructor
-        public HomeController()
+        public HomeController(TaskFormContext someName)
         {
-            //leave for now
+            tfContext = someName;
         }
 
         public IActionResult Index()
