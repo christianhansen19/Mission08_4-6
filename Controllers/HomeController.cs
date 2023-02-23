@@ -12,16 +12,20 @@ namespace Mission08_4_6.Controllers
     public class HomeController : Controller
     {
         
-
         public IActionResult Index()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        public IActionResult AddTask()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
+
+        public IActionResult Quadrants()
+        {
+            return View();
+        }
+
     }
 }
