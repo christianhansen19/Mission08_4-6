@@ -28,6 +28,11 @@ namespace Mission08_4_6.Controllers
             return View();
         }
 
+        public IActionResult AddTask()
+        {
+            return View("TaskApplication");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
