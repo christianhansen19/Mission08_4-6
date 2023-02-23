@@ -4,61 +4,136 @@
 @{
     ViewData["Title"] = "Quadrant Page";
 }
-@*
-    @model List<FormResponse>
-    ViewBag Quadrant
-*@
 
+@model List<FormResponse>
 
-<div>
-    <table class="table table-bordered table-striped">
-        <thead class="font-weight-bold">
-            <tr>
-                <td>Task</td>
-                <td>Due Date</td>
-                <td>Category</td>
-                <td>Completed</td>
-            </tr>
-        </thead>
-    </table>
+<div class="row">
+
+    <div class="column">
+        <table class="table table-bordered table-striped">
+            <thead class="font-weight-bold">
+                <tr>
+                    <td>Task</td>
+                    <td>Due Date</td>
+                    <td>Category</td>
+                    <td>Completed</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+            {
+                    @if (i.QuadrantID == 1)
+                {
+                <tr>
+                    <td>@i.TaskName</td>
+                    <td>@i.DueDate</td>
+                    <td>@i.Category</td>
+                    <td>@i.Completed</td>
+
+                    <td><a asp-controller="Home" asp-action="Edit" asp-route-movieid="@i.TaskID">Edit</a></td>
+                    <td><a asp-controller="Home" asp-action="Delete" asp-route-movieid="@i.TaskID">Delete</a></td>
+                </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="column">
+        <table class="table table-bordered table-striped">
+            <thead class="font-weight-bold">
+                <tr>
+                    <td>Task</td>
+                    <td>Due Date</td>
+                    <td>Category</td>
+                    <td>Completed</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    @if (i.QuadrantID == 2)
+                    {
+                    <tr>
+                        <td>@i.TaskName</td>
+                        <td>@i.DueDate</td>
+                        <td>@i.Category</td>
+                        <td>@i.Completed</td>
+
+                        <td><a asp-controller="Home" asp-action="Edit" asp-route-movieid="@i.TaskID">Edit</a></td>
+                        <td><a asp-controller="Home" asp-action="Delete" asp-route-movieid="@i.TaskID">Delete</a></td>
+                    </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
 </div>
 
-<div>
-    <table class="table table-bordered table-striped">
-        <thead class="font-weight-bold">
-            <tr>
-                <td>Task</td>
-                <td>Due Date</td>
-                <td>Category</td>
-                <td>Completed</td>
-            </tr>
-        </thead>
-    </table>
+
+<div class="row">
+
+    <div class="column">
+        <table class="table table-bordered table-striped">
+            <thead class="font-weight-bold">
+                <tr>
+                    <td>Task</td>
+                    <td>Due Date</td>
+                    <td>Category</td>
+                    <td>Completed</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    @if (i.QuadrantID == 3)
+                    {
+                    <tr>
+                        <td>@i.TaskName</td>
+                        <td>@i.DueDate</td>
+                        <td>@i.Category</td>
+                        <td>@i.Completed</td>
+
+                        <td><a asp-controller="Home" asp-action="Edit" asp-route-movieid="@i.TaskID">Edit</a></td>
+                        <td><a asp-controller="Home" asp-action="Delete" asp-route-movieid="@i.TaskID">Delete</a></td>
+                    </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="column">
+        <table class="table table-bordered table-striped">
+            <thead class="font-weight-bold">
+                <tr>
+                    <td>Task</td>
+                    <td>Due Date</td>
+                    <td>Category</td>
+                    <td>Completed</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model)
+                {
+                    @if (i.QuadrantID == 4)
+                    {
+                    <tr>
+                        <td>@i.TaskName</td>
+                        <td>@i.DueDate</td>
+                        <td>@i.Category</td>
+                        <td>@i.Completed</td>
+
+                        <td><a asp-controller="Home" asp-action="Edit" asp-route-movieid="@i.TaskID">Edit</a></td>
+                        <td><a asp-controller="Home" asp-action="Delete" asp-route-movieid="@i.TaskID">Delete</a></td>
+                    </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+
 </div>
 
-<div>
-    <table class="table table-bordered table-striped">
-        <thead class="font-weight-bold">
-            <tr>
-                <td>Task</td>
-                <td>Due Date</td>
-                <td>Category</td>
-                <td>Completed</td>
-            </tr>
-        </thead>
-    </table>
-</div>
-
-<div>
-    <table class="table table-bordered table-striped">
-        <thead class="font-weight-bold">
-            <tr>
-                <td>Task</td>
-                <td>Due Date</td>
-                <td>Category</td>
-                <td>Completed</td>
-            </tr>
-        </thead>
-    </table>
-</div>
 
