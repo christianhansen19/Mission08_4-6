@@ -22,7 +22,7 @@ namespace Mission08_4_6
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<TaskFormContext>(options =>
+            services.AddDbContext<TaskFormContext> (options =>
             {
                 options.UseSqlite(Configuration["ConnectionStrings:TaskConnection"]);
             });
