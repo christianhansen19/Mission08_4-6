@@ -11,7 +11,7 @@ namespace Mission08_4_6.Models
         }
 
         public DbSet<Quadrant> Quadrants { get; set; } // Quadrants Model
-        //public DbSet<FormResponse> Responses { get; set; } // Responses Model
+        public DbSet<FormResponse> Responses { get; set; } // Responses Model
 
         protected override void OnModelCreating(ModelBuilder mb)
         {
@@ -22,18 +22,18 @@ namespace Mission08_4_6.Models
                 new Quadrant { QuadrantID = 4, QuadrantName = "Quadrant IV: Not Important / Not Urgent" }
             );
 
-            //mb.Entity<FormResponse>().HasData(
-            //    // Seeded Database
-            //    new FormResponse
-            //    {
-            //        TaskID = 1,
-            //        TaskName = "Homework",
-            //        DueDate = "1/1/2023",
-            //        Category = "School",
-            //        Completed = false,
-            //        QuadrantID = 1
-            //    }
-            //);
+            mb.Entity<FormResponse>().HasData(
+                // Seeded Database
+                new FormResponse
+                {
+                    TaskID = 1,
+                    TaskName = "Homework",
+                    DueDate = "1/1/2023",
+                    Category = "School",
+                    Completed = false,
+                    QuadrantID = 1
+                }
+            );
         }
     }
 }
