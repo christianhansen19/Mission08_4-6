@@ -33,7 +33,7 @@ namespace Mission08_4_6.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddNewMovie(FormResponse fr)
+        public IActionResult AddTask(FormResponse fr)
         {
             if (ModelState.IsValid) // if the model is valid, display the confirmation page
             {
@@ -46,6 +46,7 @@ namespace Mission08_4_6.Controllers
                 ViewBag.Quadrants = tfContext.Quadrants.ToList();
                 return View("TaskApplication", fr);
             }
+
         }
 
         public IActionResult Quadrants()
