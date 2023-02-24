@@ -51,7 +51,13 @@ namespace Mission08_4_6.Controllers
 
         public IActionResult Quadrants()
         {
-            return View();
+            var applications = tfContext.Responses
+            .Include(x => x.Quadrant)
+            .Where(x => x.Completed == false)
+            .OrderBy(x => x.TaskID)
+            .ToList();
+
+            return View(applications);
         }
 
     }
