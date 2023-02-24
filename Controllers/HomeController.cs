@@ -60,5 +60,22 @@ namespace Mission08_4_6.Controllers
             return View(applications);
         }
 
+        [HttpGet]
+        public IActionResult Delete(int TaskID)
+        {
+            var task = tfContext.Responses.Single(x => x.TaskID == TaskID);
+
+            return View(task);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(FormResponse fr)
+        {
+            tfContext.Responses.Remove(fr);
+            tfContext.SaveChanges();
+
+            return RedirectToAction("Quadrants");
+        }
+
     }
 }
