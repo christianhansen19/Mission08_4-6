@@ -64,7 +64,7 @@ namespace Mission08_4_6.Controllers
         [HttpGet]
         public IActionResult Edit(int TaskID)
         {
-            ViewBag.Categories = tfContext.Quadrants.ToList();
+            ViewBag.Quadrants = tfContext.Quadrants.ToList();
 
             var task = tfContext.Responses.Single(x => x.TaskID == TaskID);
 
@@ -80,14 +80,14 @@ namespace Mission08_4_6.Controllers
                 tfContext.Update(fr);
                 tfContext.SaveChanges();
 
-                return RedirectToAction("TaskApplication", fr);
+                return RedirectToAction("Quadrants", fr);
             }
             else
             {
-                ViewBag.Categories = tfContext.Quadrants.ToList();
+                ViewBag.Quadrants = tfContext.Quadrants.ToList();
                 var task = tfContext.Responses.Single(data => data.TaskID == taskid);
 
-                return View("Quadrants", task);
+                return View("TaskApplication", task);
             }
         }
 
