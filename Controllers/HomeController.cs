@@ -60,6 +60,37 @@ namespace Mission08_4_6.Controllers
             return View(applications);
         }
 
+        // Edit - Get
+        [HttpGet]
+        public IActionResult Edit(int TaskID)
+        {
+            ViewBag.Quadrants = tfContext.Quadrants.ToList();
+
+            var task = tfContext.Responses.Single(x => x.TaskID == TaskID);
+
+            return View("TaskApplication", task);
+        }
+
+        // Edit - Post
+        [HttpPost]
+        public IActionResult Edit(FormResponse fr, int taskid)
+        {
+            if (ModelState.IsValid)
+            {
+                tfContext.Update(fr);
+                tfContext.SaveChanges();
+
+                return RedirectToAction("Quadrants", fr);
+            }
+            else
+            {
+                ViewBag.Quadrants = tfContext.Quadrants.ToList();
+                var task = tfContext.Responses.Single(data => data.TaskID == taskid);
+
+                return View("TaskApplication", task);
+            }
+        }
+
         [HttpGet]
         public IActionResult Delete(int TaskID)
         {
